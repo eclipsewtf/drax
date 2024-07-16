@@ -1310,7 +1310,7 @@ local UserInterface = (function() -- src/Lua/Interface/Interface.Lua
                             
                             ColorpickerStatus.Name = "ColorpickerStatus"
                             ColorpickerStatus.Parent = ColorpickerHolder
-                            ColorpickerStatus.BackgroundColor3 = Color3FromRGB(170, 170, 255)
+                            ColorpickerStatus.BackgroundColor3 = Color3FromRGB(250, 3, 0)
                             ColorpickerStatus.BorderColor3 = Color3FromRGB(0, 0, 0)
                             ColorpickerStatus.BorderSizePixel = 0
                             ColorpickerStatus.Position = UDim2New(0.943231463, 0, 0, 0)
@@ -1318,7 +1318,7 @@ local UserInterface = (function() -- src/Lua/Interface/Interface.Lua
                             
                             ColorpickerInline.Name = "ColorpickerInline"
                             ColorpickerInline.Parent = ColorpickerHolder
-                            ColorpickerInline.BackgroundColor3 = Color3FromRGB(170, 170, 255)
+                            ColorpickerInline.BackgroundColor3 = Color3FromRGB(250, 3, 0)
                             ColorpickerInline.BackgroundTransparency = 1.000
                             ColorpickerInline.BorderColor3 = Color3FromRGB(0, 0, 0)
                             ColorpickerInline.BorderSizePixel = 0
@@ -2134,7 +2134,7 @@ local UserInterface = (function() -- src/Lua/Interface/Interface.Lua
                         
                             KeybindInline.Name = "KeybindInline"
                             KeybindInline.Parent = KeybindHolder
-                            KeybindInline.BackgroundColor3 = Color3FromRGB(170, 170, 255)
+                            KeybindInline.BackgroundColor3 = Color3FromRGB(250, 3, 0)
                             KeybindInline.BackgroundTransparency = 1.000
                             KeybindInline.BorderColor3 = Color3FromRGB(0, 0, 0)
                             KeybindInline.BorderSizePixel = 0
@@ -5353,7 +5353,7 @@ local nigga = (function() -- src/Lua/loader.lua
                                 local title = indicatorClass:new_indicator("drax.crack")
                                 local aim_Ass_character = indicatorClass:new_indicator("no target")
                                 local silent_Ass_character = indicatorClass:new_indicator("no target")
-                                title.changecolor(Color3.fromRGB(170, 170, 255))
+                                title.changecolor(Color3.fromRGB(250, 3, 0))
                                 aim_Ass_character.changecolor(Color3.fromRGB(255,255,255))
                                 silent_Ass_character.changecolor(Color3.fromRGB(255,255,255))
                                 
@@ -7267,7 +7267,7 @@ local nigga = (function() -- src/Lua/loader.lua
                         local fov = aim_assist_render:Toggle({ title = "show fov", default = false, callback = function (bool)
                             showfov.enabled = bool
                         end })
-                        fov:Colorpicker({ default = Color3.fromRGB(170, 170, 255), transparency = 0.5, callback = function (value, transparency)
+                        fov:Colorpicker({ default = Color3.fromRGB(250, 3, 0), transparency = 0.5, callback = function (value, transparency)
                             showfov.color = value
                             showfov.transparency = transparency
                         end })
@@ -7283,7 +7283,7 @@ local nigga = (function() -- src/Lua/loader.lua
                         local line = aim_assist_render:Toggle({ title = "show line", default = false, callback = function (bool)
                             showline.enabled = bool
                         end })
-                        line:Colorpicker({ default = Color3.fromRGB(170, 170, 255), transparency = 0.5, callback = function (value)
+                        line:Colorpicker({ default = Color3.fromRGB(250, 3, 0), transparency = 0.5, callback = function (value)
                             showline.color = value
                         end })
                         
@@ -7930,7 +7930,7 @@ aim_assist:TextBox({ title = "this is a textbox dude", default = "", callback = 
     print(value)
 end })
 
-aim_assist:Colorpicker({ title = "very colorpicker", default = Color3.fromRGB(170, 170, 255), transparency = 0.5, callback = function (value)
+aim_assist:Colorpicker({ title = "very colorpicker", default = Color3.fromRGB(250, 3, 0), transparency = 0.5, callback = function (value)
     print(value)
 end })
 
