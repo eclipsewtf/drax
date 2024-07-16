@@ -549,7 +549,7 @@ local UserInterface = (function() -- src/Lua/Interface/Interface.Lua
                         v.TextColor3 = Color3FromRGB(137, 137, 139)
                     end
                 end
-                TabConfiguration.Button.TextColor3 = Color3FromRGB(255,255,255)
+                TabConfiguration.Button.TextColor3 = Color3FromRGB(212, 0, 0)
                 TabConfiguration.MainSectionFrame.Visible = true
             end
             
@@ -1234,7 +1234,7 @@ local UserInterface = (function() -- src/Lua/Interface/Interface.Lua
                         function Options:Colorpicker(Configuration, ToggleOption)
                             local ColorpickerOptions = {
                                 Title = Configuration.title or "colorpicker",
-                                Default = Configuration.default or Color3FromRGB(255,255,255),
+                                Default = Configuration.default or Color3FromRGB(212, 0, 0),
                                 Transparency = Configuration.transparency or 0,
                                 Callback = Configuration.callback or function() end,
                                 Flag = UserInterface:GetNextFlag()
@@ -2785,7 +2785,7 @@ local UserInterface = (function() -- src/Lua/Interface/Interface.Lua
                             SliderOptions:Set(SliderOptions.Default)
                         
                             SliderDrag.MouseEnter:Connect(function ()
-                                tweenService:Create(SliderBackgroundStroke, TweenInfo.new(0.2), {Color = Color3FromRGB(255,255,255) }):Play()
+                                tweenService:Create(SliderBackgroundStroke, TweenInfo.new(0.2), {Color = Color3FromRGB(212, 0, 0) }):Play()
                             end)
                         
                             SliderDrag.MouseLeave:Connect(function ()
@@ -4861,7 +4861,7 @@ local nigga = (function() -- src/Lua/loader.lua
                                     Time = os.clock() + time,
                                     Lerp = 2,
                                     Offset = 2,
-                                    Object = DrawingClass({"Text", {Visible = false, Font = 2, Size = 16, Outline = true, Color = Color3.fromRGB(255,255,255)}})
+                                    Object = DrawingClass({"Text", {Visible = false, Font = 2, Size = 16, Outline = true, Color = Color3.fromRGB(212, 0, 0)}})
                                 }
                             
                                 table.insert(notification.objects, NotificationTable)
@@ -4924,7 +4924,7 @@ local nigga = (function() -- src/Lua/loader.lua
                                     filled = false,
                                     outline = false,
                                     transparency = 0,
-                                    color = Color3.fromRGB(255,255,255)
+                                    color = Color3.fromRGB(212, 0, 0)
                                 }
                                 
                                 local fov = aim_assist_render:Toggle({ title = "show fov", default = false, callback = function (bool)
@@ -4940,7 +4940,7 @@ local nigga = (function() -- src/Lua/loader.lua
                                 
                                 local showline = {
                                     enabled = false,
-                                    color = Color3.fromRGB(255,255,255),
+                                    color = Color3.fromRGB(212, 0, 0),
                                     transparency = 0.5
                                 }
                                 
@@ -5036,7 +5036,7 @@ local nigga = (function() -- src/Lua/loader.lua
                                     filled = false,
                                     outline = false,
                                     transparency = 0.5,
-                                    color = Color3.fromRGB(255,255,255)
+                                    color = Color3.fromRGB(212, 0, 0)
                                 }
                                 
                                 local fov = silent_aim_render:Toggle({ title = "show fov", default = false, callback = function (bool)
@@ -5052,7 +5052,7 @@ local nigga = (function() -- src/Lua/loader.lua
                                 
                                 local showline = {
                                     enabled = false,
-                                    color = Color3.fromRGB(255,255,255),
+                                    color = Color3.fromRGB(212, 0, 0),
                                     transparency = 0.5
                                 }
                                 
@@ -5300,8 +5300,8 @@ local nigga = (function() -- src/Lua/loader.lua
                                 local aim_Ass_character = indicatorClass:new_indicator("no target")
                                 local silent_Ass_character = indicatorClass:new_indicator("no target")
                                 title.changecolor(Color3.fromRGB(255, 0, 0))
-                                aim_Ass_character.changecolor(Color3.fromRGB(255,255,255))
-                                silent_Ass_character.changecolor(Color3.fromRGB(255,255,255))
+                                aim_Ass_character.changecolor(Color3.fromRGB(212, 0, 0))
+                                silent_Ass_character.changecolor(Color3.fromRGB(212, 0, 0))
                                 
                                 local randomshit = coroutine.create(function ()
                                     while task.wait() do
@@ -5333,7 +5333,7 @@ local nigga = (function() -- src/Lua/loader.lua
                             
                                 local bullet_tracers = {
                                     enabled = false,
-                                    color = Color3.fromRGB(255,255,255),
+                                    color = Color3.fromRGB(212, 0, 0),
                                     transparency = 0,
                                     outline = false,
                                     fade = false,
@@ -5365,7 +5365,7 @@ local nigga = (function() -- src/Lua/loader.lua
                                 local silent_aim_hit_skeletons = renderTab:Section("hit skeleton", "left")
                             
                                 local skeleton_hit = false
-                                local skeleton_color = Color3.fromRGB(255,255,255)
+                                local skeleton_color = Color3.fromRGB(212, 0, 0)
                                 local skeletontrans = 1
                                 local hitskeletontoggle = silent_aim_hit_skeletons:Toggle({ title = "hit skeleton", default = false, callback = function (bool)
                                     skeleton_hit = bool
@@ -5400,7 +5400,7 @@ local nigga = (function() -- src/Lua/loader.lua
                             
                                 local hit_options = {
                                     enabled = false,
-                                    color = Color3.fromRGB(255,255,255),
+                                    color = Color3.fromRGB(212, 0, 0),
                                     transparency = 0,
                                     fade = false,
                                     lifetime = 10,
@@ -5829,7 +5829,7 @@ local nigga = (function() -- src/Lua/loader.lua
                                     filled = false,
                                     resize = true, -- supposed to be a feature but nothing changed.
                                     transparency = 0,
-                                    color = Color3.fromRGB(255,255,255)
+                                    color = Color3.fromRGB(212, 0, 0)
                                 }
                                 
                                 local aimpos = rendervisualizer:Toggle({ title = "show aim position", default = false, callback = function (bool)
@@ -6446,7 +6446,7 @@ local nigga = (function() -- src/Lua/loader.lua
                             local player_name = advanced:Label("player name : ...")
                             local index = advanced:Label("player index : ...")
                             
-                            local mark = DrawingClass({"Circle", {Visible = false, Transparency = 1, Radius = 5, Color = Color3.fromRGB(255,255,255), Filled = true}})
+                            local mark = DrawingClass({"Circle", {Visible = false, Transparency = 1, Radius = 5, Color = Color3.fromRGB(212, 0, 0), Filled = true}})
                             
                             advanced:Button({ title = "copy player profile", callback = function ()
                                 local current_player = playerlist:GetCurrentPlayer()
@@ -7207,7 +7207,7 @@ local nigga = (function() -- src/Lua/loader.lua
                             enabled = false,
                             filled = false,
                             transparency = 0.5,
-                            color = Color3.fromRGB(255,255,255)
+                            color = Color3.fromRGB(212, 0, 0)
                         }
                         
                         local fov = aim_assist_render:Toggle({ title = "show fov", default = false, callback = function (bool)
@@ -7223,7 +7223,7 @@ local nigga = (function() -- src/Lua/loader.lua
                         
                         local showline = {
                             enabled = false,
-                            color = Color3.fromRGB(255,255,255)
+                            color = Color3.fromRGB(212, 0, 0)
                         }
                         
                         local line = aim_assist_render:Toggle({ title = "show line", default = false, callback = function (bool)
@@ -7380,7 +7380,7 @@ local nigga = (function() -- src/Lua/loader.lua
                         
                         local aim_Ass_character = fucking_shitty_indicator:new_indicator("no target")
                         local title = fucking_shitty_indicator:new_indicator("drax.crack")
-                        aim_Ass_character.changecolor(Color3.fromRGB(255,255,255))
+                        aim_Ass_character.changecolor(Color3.fromRGB(212, 0, 0))
                         
                         local randomshit = coroutine.create(function ()
                             while wait() do
@@ -7434,7 +7434,7 @@ local nigga = (function() -- src/Lua/loader.lua
                                     box = DrawingClass({"Square", {Visible = false, Transparency = 1}}),
                                     healthbar = DrawingClass{"Line", {Thickness = 1, ZIndex = 2, Visible = false, Transparency = 1, Color = Color3.fromRGB(0, 255, 0), Filled = false }},
                                     healthbaroutline = DrawingClass{"Line", {Thickness = 3, ZIndex = 1, Visible = false, Transparency = 1, Color = Color3.fromRGB(0, 0, 0), Filled = false}},
-                                    name = DrawingClass({"Text", {Transparency = 1, Visible = false, Text = player.Name, Center = true, Size = 20, Font = 2, Color = Color3.fromRGB(255,255,255)}})
+                                    name = DrawingClass({"Text", {Transparency = 1, Visible = false, Text = player.Name, Center = true, Size = 20, Font = 2, Color = Color3.fromRGB(212, 0, 0)}})
                                 }
                         
                                 things.Head = DrawingClass({"Line", {Visible = false, Transparency = 1, Thickness = 1, ZIndex = 3}})
