@@ -3387,7 +3387,7 @@ local nigga = (function() -- src/Lua/loader.lua
         MainTitle.BorderSizePixel = 0
         MainTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
         MainTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
-        MainTitle.Text = "drax.dahood"
+        MainTitle.Text = "drax.crack"
         MainTitle.TextStrokeTransparency = 0
         MainTitle.TextSize = 16
         MainTitle.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
@@ -3774,7 +3774,7 @@ local nigga = (function() -- src/Lua/loader.lua
                 local current_mouse_arg = "UpdateMousePosI"
                 
                 local mouse_arg = {
-                    -- dahood
+                    -- crack
                 	[2788229376] = current_mouse_arg or nil,
                 	[16033173781] = current_mouse_arg or nil,
                 
@@ -4327,7 +4327,7 @@ local nigga = (function() -- src/Lua/loader.lua
                         end)()
                     end
                     
-                    local Interface = UserInterface:Create{title = 'drax<font color="rgb(250, 3, 0)">.dahood</font>',}
+                    local Interface = UserInterface:Create{title = 'drax<font color="rgb(250, 3, 0)">.crack</font>',}
                     
                     do -- src/Lua/Scripts/da_hood/components/
                         do -- src/Lua/Scripts/da_hood/components/a_aimassist.lua
