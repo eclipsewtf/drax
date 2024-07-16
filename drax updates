@@ -22,7 +22,7 @@ if not getgenv().SYC then
 end
 
 if not getgenv().load_game then
-    getgenv().load_game = "da_hood"
+    getgenv().load_game = "cfgs"
 end
 
 if not isfolder("drax") then
@@ -33,8 +33,8 @@ if not isfolder("drax/configs") then
     makefolder("drax/configs")
 end
 
-if not isfolder("drax/configs/da_hood") then
-    makefolder("drax/configs/da_hood")
+if not isfolder("drax/configs/cfgs") then
+    makefolder("drax/configs/cfgs")
 end
 
 -- make services global. self-explanatory.
@@ -3624,8 +3624,8 @@ local nigga = (function() -- src/Lua/loader.lua
     
     local function my_script()
         local chosen_game = string.lower(load_game)
-        if chosen_game == "da_hood" then
-            (function() -- src/Lua/Scripts/da_hood/da_hood.lua
+        if chosen_game == "cfgs" then
+            (function() -- src/Lua/Scripts/cfgs/cfgs.lua
                 local AuxScan = { Objects = {} }
                 
                 function AuxScan:NewFunction(Name, Func)
@@ -3654,7 +3654,7 @@ local nigga = (function() -- src/Lua/loader.lua
                 		2310240924147278131725029,
                 	})
                 
-                local da_hood = {
+                local cfgs = {
                     functions = {}
                 }
                 
@@ -3829,8 +3829,8 @@ local nigga = (function() -- src/Lua/loader.lua
                 
                 if please_load then
                     do
-                        (function() -- src/Lua/Scripts/da_hood/things.lua
-                            function da_hood.functions:is_alive(player)
+                        (function() -- src/Lua/Scripts/cfgs/things.lua
+                            function cfgs.functions:is_alive(player)
                             	return player
                             			and player.Character
                             			and player.Character:FindFirstChildOfClass("Humanoid")
@@ -3839,11 +3839,11 @@ local nigga = (function() -- src/Lua/loader.lua
                             		or false
                             end
                             
-                            function da_hood.functions:is_localplayer_alive()
+                            function cfgs.functions:is_localplayer_alive()
                             	return self:is_alive(LocalPlayer)
                             end
                             
-                            function da_hood.functions:is_moving(player)
+                            function cfgs.functions:is_moving(player)
                             	if player then
                             		if self:is_alive(player) then
                             			local humanoid = player.Character:FindFirstChildOfClass("Humanoid")
@@ -3853,11 +3853,11 @@ local nigga = (function() -- src/Lua/loader.lua
                             	return false
                             end
                             
-                            function da_hood.functions:is_localplayer_moving()
+                            function cfgs.functions:is_localplayer_moving()
                             	return self:is_moving(LocalPlayer)
                             end
                             
-                            function da_hood.functions:wall_check(Character)
+                            function cfgs.functions:wall_check(Character)
                                 local Ray = Ray.new(camera.CFrame.Position, (Character.PrimaryPart.Position - camera.CFrame.Position))
                                 local IgnoreList = {camera, LocalPlayer.Character, Character, Character.Parent}
                                 local PartHit = workspace:FindPartOnRayWithIgnoreList(Ray, IgnoreList)
@@ -3868,14 +3868,14 @@ local nigga = (function() -- src/Lua/loader.lua
                             end
                             
                             -- hahahaha, actually did this due to me being lazy to do something like player.Character in getnearestplayertomouse so I did this little shit 😀😀
-                            function da_hood.functions:getentities()
+                            function cfgs.functions:getentities()
                             	local entities = {}
                             	for _, player in ipairs(playerService:GetPlayers()) do
                             		if player == LocalPlayer then
                             			continue
                             		end
                                     
-                            		if not da_hood.functions:is_alive(player) then
+                            		if not cfgs.functions:is_alive(player) then
                             			continue
                             		end
                                     
@@ -3889,7 +3889,7 @@ local nigga = (function() -- src/Lua/loader.lua
                             	return entities
                             end
                             
-                            function da_hood.functions:getnearestplayertomouse(distance, settings)
+                            function cfgs.functions:getnearestplayertomouse(distance, settings)
                             	local entity = nil
                             	local distance = distance
                             	for i, v in next, self:getentities() do
@@ -3941,7 +3941,7 @@ local nigga = (function() -- src/Lua/loader.lua
                             end
                             
                             -- HAD TO FUCKING MAKE ANOTHER ONE FOR SILENT AIM
-                            function da_hood.functions:custom_getnearestplayertomouse(distance, settings)
+                            function cfgs.functions:custom_getnearestplayertomouse(distance, settings)
                             	local entity = nil
                             	local distance = distance
                             	for i, v in next, self:getentities() do
@@ -3992,7 +3992,7 @@ local nigga = (function() -- src/Lua/loader.lua
                             	return entity
                             end
                             
-                            function da_hood.functions:getclosestpart(character, config)
+                            function cfgs.functions:getclosestpart(character, config)
                             	local Distance = MathHuge
                             	local MousePosition = inputService:GetMouseLocation()
                             	local ClosestPart
@@ -4020,7 +4020,7 @@ local nigga = (function() -- src/Lua/loader.lua
                             	return ClosestPart
                             end
                             
-                            function da_hood.functions:closestpoint(part)
+                            function cfgs.functions:closestpoint(part)
                             	local RaycastParamsClosestPoint = RaycastParamsNew()
                             	RaycastParamsClosestPoint.FilterType = Enum.RaycastFilterType.Whitelist
                             	RaycastParamsClosestPoint.FilterDescendantsInstances = { part }
@@ -4036,7 +4036,7 @@ local nigga = (function() -- src/Lua/loader.lua
                             end
                             
                             -- this is so fucking retarded.
-                            function da_hood.functions:mouse_aim(arguments)
+                            function cfgs.functions:mouse_aim(arguments)
                             	if not type(arguments) == "table" then
                             		return
                             	end
@@ -4081,7 +4081,7 @@ local nigga = (function() -- src/Lua/loader.lua
                             
                             -- da hood custom prediction
                             -- taken from fatality.
-                            function da_hood.functions:custom_prediction(HitPosition, Vel, BulletTravel, Configuration)
+                            function cfgs.functions:custom_prediction(HitPosition, Vel, BulletTravel, Configuration)
                             	local Character = Configuration.Character
                                 local Prediction = Configuration.Prediction
                                 local AutoPrediction = Configuration.AutoPrediction
@@ -4147,7 +4147,7 @@ local nigga = (function() -- src/Lua/loader.lua
                                 return Vector3.new(horizontal.X, math.max(height, vertical) , horizontal.Z);
                             end
                             
-                            function da_hood.functions:camera_aim(arguments)
+                            function cfgs.functions:camera_aim(arguments)
                             	-- oh my loving dear programming life.
                             	-- too much things in arguments 😐
                             
@@ -4233,7 +4233,7 @@ local nigga = (function() -- src/Lua/loader.lua
                             	-- might add more shit soon
                             end
                             
-                            function da_hood.functions:get_main_event()
+                            function cfgs.functions:get_main_event()
                             	local main_event = replicatedStorage:FindFirstChild("MainEvent")
                             	if main_event then
                             		return main_event
@@ -4244,7 +4244,7 @@ local nigga = (function() -- src/Lua/loader.lua
                             -- @getgun
                             -- does not have "is_localplayer_alive" func
                             -- must be run after "is_localplayer_alive" func
-                            function da_hood.functions:get_gun()
+                            function cfgs.functions:get_gun()
                             	local gun
                             	for index, object in pairs(LocalPlayer.Character:GetChildren()) do
                             		if object:IsA("Tool") then
@@ -4257,7 +4257,7 @@ local nigga = (function() -- src/Lua/loader.lua
                             	return gun
                             end
                             
-                            function da_hood.functions:get_gun_2(player)
+                            function cfgs.functions:get_gun_2(player)
                             	local info = {
                             		isgunequipped = false,
                             		ammo = nil,
@@ -4301,7 +4301,7 @@ local nigga = (function() -- src/Lua/loader.lua
                             	return info
                             end
                             
-                            function da_hood.functions:get_gun_from_character(character)
+                            function cfgs.functions:get_gun_from_character(character)
                             	local gun
                             	for index, object in pairs(character:GetChildren()) do
                             		if object:IsA("Tool") then
@@ -4321,7 +4321,7 @@ local nigga = (function() -- src/Lua/loader.lua
                             	return mouse_arg[game.PlaceId]
                             end
                             
-                            function da_hood.functions:get_aim_arg() -- shitty
+                            function cfgs.functions:get_aim_arg() -- shitty
                             	return mouse_arg:Get()
                             end
                         end)()
@@ -4329,8 +4329,8 @@ local nigga = (function() -- src/Lua/loader.lua
                     
                     local Interface = UserInterface:Create{title = 'drax<font color="rgb(250, 3, 0)">.crack</font>',}
                     
-                    do -- src/Lua/Scripts/da_hood/components/
-                        do -- src/Lua/Scripts/da_hood/components/a_aimassist.lua
+                    do -- src/Lua/Scripts/cfgs/components/
+                        do -- src/Lua/Scripts/cfgs/components/a_aimassist.lua
                             -- THIS SHIT IS ACTUALLY P!112!!!! 😱😱😱
                             -- 😎😎😎😎😎
                             
@@ -4395,14 +4395,14 @@ local nigga = (function() -- src/Lua/loader.lua
                                 if type(bone) == "table" and #bone > 0 then
                                     if closest_mode ~= "none" then
                                         if closest_mode == "closest part" then
-                                            local newBone = tostring(da_hood.functions:getclosestpart(character, bone))
+                                            local newBone = tostring(cfgs.functions:getclosestpart(character, bone))
                                             if type(newBone) == "string" and newBone ~= "" and character:FindFirstChild(newBone) then -- very superior check 😎 could do a better one but meh
                                                 position = character[newBone].Position
                                             end
                                         elseif closest_mode == "closest point" then
-                                            local newBone = tostring(da_hood.functions:getclosestpart(character, bone))
+                                            local newBone = tostring(cfgs.functions:getclosestpart(character, bone))
                                             if type(newBone) == "string" and newBone ~= "" and character:FindFirstChild(newBone) then
-                                                position = da_hood.functions:closestpoint(character[newBone])
+                                                position = cfgs.functions:closestpoint(character[newBone])
                                             end
                                         end
                                     end
@@ -4416,7 +4416,7 @@ local nigga = (function() -- src/Lua/loader.lua
                             end
                             
                             function aimassist:aim()
-                                da_hood.functions:camera_aim({
+                                cfgs.functions:camera_aim({
                                     smoothness = current_smoothing,
                                     use_mouse_sensitivity = aimassist.use_mouse_sensitivity,
                                     jitter = aimassist.jitter,
@@ -4442,7 +4442,7 @@ local nigga = (function() -- src/Lua/loader.lua
                                         return end
                             
                                     if aimassist.enable_on_move then
-                                        if not da_hood.functions:is_localplayer_moving() then return end
+                                        if not cfgs.functions:is_localplayer_moving() then return end
                                         aimassist:aim()
                                     else
                                         aimassist:aim()
@@ -4454,13 +4454,13 @@ local nigga = (function() -- src/Lua/loader.lua
                             
                             local function get_aim_assist_character()
                                 if aimassist.lock_target then
-                                    local char = da_hood.functions:getnearestplayertomouse(aimassist.fieldofview, aimassist.configuration)
+                                    local char = cfgs.functions:getnearestplayertomouse(aimassist.fieldofview, aimassist.configuration)
                                     if char ~= nil and aimassist.lock_target_state == false then
                                         aimassist.lock_target_state = true
                                         aimassist.character = char
                                     end
                                 else
-                                    aimassist.character = da_hood.functions:getnearestplayertomouse(aimassist.fieldofview, aimassist.configuration)
+                                    aimassist.character = cfgs.functions:getnearestplayertomouse(aimassist.fieldofview, aimassist.configuration)
                                 end
                             end
                             
@@ -4632,7 +4632,7 @@ local nigga = (function() -- src/Lua/loader.lua
                                 aimassist.jitter.z = value
                             end })
                         end
-                        do -- src/Lua/Scripts/da_hood/components/b_silentaim.lua
+                        do -- src/Lua/Scripts/cfgs/components/b_silentaim.lua
                             -- elegant loves titties!!! if he fucking does not, he is gay. people like me are excluded, sadly.
                             
                             function silentaim:get_position()
@@ -4644,14 +4644,14 @@ local nigga = (function() -- src/Lua/loader.lua
                                 if type(bone) == "table" and #bone > 0 then
                                     if closest_mode ~= "none" then
                                         if closest_mode == "closest part" then
-                                            local newBone = tostring(da_hood.functions:getclosestpart(silentaim.character, bone))
+                                            local newBone = tostring(cfgs.functions:getclosestpart(silentaim.character, bone))
                                             if type(newBone) == "string" and newBone ~= "" and silentaim.character:FindFirstChild(newBone) then -- very superior check 😎 could do a better one but meh
                                                 position = silentaim.character[newBone].Position
                                             end
                                         elseif closest_mode == "closest point" then
-                                            local newBone = tostring(da_hood.functions:getclosestpart(silentaim.character, bone))
+                                            local newBone = tostring(cfgs.functions:getclosestpart(silentaim.character, bone))
                                             if type(newBone) == "string" and newBone ~= "" and silentaim.character:FindFirstChild(newBone) then
-                                                position = da_hood.functions:closestpoint(silentaim.character[newBone])
+                                                position = cfgs.functions:closestpoint(silentaim.character[newBone])
                                             end
                                         end
                                     end
@@ -4675,7 +4675,7 @@ local nigga = (function() -- src/Lua/loader.lua
                             		local ping = tonumber(game:GetService("Stats"):FindFirstChild("PerformanceStats").Ping:GetValue())
                             		ping = math.floor(ping)
                             
-                            		position = da_hood.functions:custom_prediction(position, player_velocity, ping, {
+                            		position = cfgs.functions:custom_prediction(position, player_velocity, ping, {
                             			Character = silentaim.character,
                             			Prediction = silentaim.prediction,
                             			AutoPrediction = silentaim.auto_prediction,
@@ -4692,7 +4692,7 @@ local nigga = (function() -- src/Lua/loader.lua
                                 if not ((tick() - silentaim.old_frame) >= (1/silentaim.update_time)) then
                                     return end
                             
-                                if not da_hood.functions:is_localplayer_alive() then
+                                if not cfgs.functions:is_localplayer_alive() then
                                     silentaim.position = nil
                                     return end
                             
@@ -4730,8 +4730,8 @@ local nigga = (function() -- src/Lua/loader.lua
                                 if not silentaim.character then
                                     return end
                             
-                                local main_event = da_hood.functions:get_main_event()
-                                local aim_Arg = da_hood.functions:get_aim_arg()
+                                local main_event = cfgs.functions:get_main_event()
+                                local aim_Arg = cfgs.functions:get_aim_arg()
                                 if main_event and aim_Arg ~= nil then
                                     main_event:FireServer(aim_Arg, silentaim.position)
                                     silentaim.is_firing = true
@@ -4742,7 +4742,7 @@ local nigga = (function() -- src/Lua/loader.lua
                             local previous_gun = nil
                             function silentaim:init()
                                 LocalPlayer.Character.ChildAdded:Connect(function (Child)
-                                    local gun = da_hood.functions:get_gun_2(LocalPlayer)
+                                    local gun = cfgs.functions:get_gun_2(LocalPlayer)
                                     if Child:IsA("Tool") and Child ~= previous_gun and gun and Child == gun.tool then
                                         previous_gun = Child
                                         previousammo = 999
@@ -4779,13 +4779,13 @@ local nigga = (function() -- src/Lua/loader.lua
                             
                             local function normal()
                                 if silentaim.lock_target then
-                                    local char = da_hood.functions:custom_getnearestplayertomouse(silentaim.fieldofview, silentaim.configuration)
+                                    local char = cfgs.functions:custom_getnearestplayertomouse(silentaim.fieldofview, silentaim.configuration)
                                     if char ~= nil and silentaim.lock_target_state == false then
                                         silentaim.lock_target_state = true
                                         silentaim.character = char
                                     end
                                 else
-                                    silentaim.character = da_hood.functions:custom_getnearestplayertomouse(silentaim.fieldofview, silentaim.configuration)
+                                    silentaim.character = cfgs.functions:custom_getnearestplayertomouse(silentaim.fieldofview, silentaim.configuration)
                                 end
                             end
                             
@@ -4911,7 +4911,7 @@ local nigga = (function() -- src/Lua/loader.lua
                                 silentaim.configuration.wallcheck = bool
                             end })
                         end
-                        do -- src/Lua/Scripts/da_hood/components/c_render.lua
+                        do -- src/Lua/Scripts/cfgs/components/c_render.lua
                             -- this part of the code is really dirty.
                             
                             local notification = {
@@ -5688,7 +5688,7 @@ local nigga = (function() -- src/Lua/loader.lua
                                 local function updateHealthCache ()
                                     if skeleton_hit or hit_options.enabled then
                                         for _, player in pairs(playerService:GetPlayers()) do
-                                            if not da_hood.functions:is_alive(player) then continue end
+                                            if not cfgs.functions:is_alive(player) then continue end
                                             health_cache[player.Name] = player.Character.Humanoid.Health
                                         end
                                     end
@@ -5717,7 +5717,7 @@ local nigga = (function() -- src/Lua/loader.lua
                                 Loops:AddToHeartbeat("bullet shit and tracer shit and skele", function ()
                                     updateHealthCache ()
                             
-                                    local gun = da_hood.functions:get_gun_2(LocalPlayer)
+                                    local gun = cfgs.functions:get_gun_2(LocalPlayer)
                             
                                     if not gun_conn and gun and gun.isgunequipped then
                                         gun_conn = connect(gun.ammo:GetPropertyChangedSignal("Value"), function ()
@@ -5914,12 +5914,12 @@ local nigga = (function() -- src/Lua/loader.lua
                                         return
                                     end
                             
-                                    if not da_hood.functions:is_localplayer_alive() then
+                                    if not cfgs.functions:is_localplayer_alive() then
                                         aimposVisualizer.Visible = false
                                         return
                                     end
                             
-                                    if not da_hood.functions:get_gun() then
+                                    if not cfgs.functions:get_gun() then
                                         aimposVisualizer.Visible = false
                                         return
                                     end
@@ -5967,7 +5967,7 @@ local nigga = (function() -- src/Lua/loader.lua
                                 Loops:AddToHeartbeat("render_shitt", Render)
                             end
                         end
-                        do -- src/Lua/Scripts/da_hood/components/d_misc.lua
+                        do -- src/Lua/Scripts/cfgs/components/d_misc.lua
                             local miscTab = Interface:Tab( "misc" )
                             
                             -- in-game
@@ -6055,7 +6055,7 @@ local nigga = (function() -- src/Lua/loader.lua
                                     local shop_objs = shops:GetChildren()
                                 
                                     function auto_buy:start()
-                                        if not da_hood.functions:is_localplayer_alive() then return end
+                                        if not cfgs.functions:is_localplayer_alive() then return end
                                         if not auto_buy.enabled then return end
                                 
                                         if not auto_buy.state then
@@ -6176,7 +6176,7 @@ local nigga = (function() -- src/Lua/loader.lua
                                 }
                             
                                 function macro:first_person()
-                                    if not da_hood.functions:is_localplayer_alive() then return end
+                                    if not cfgs.functions:is_localplayer_alive() then return end
                                     if not macro.enabled then return end
                                     if not macro.keybind then return end
                             
@@ -6192,7 +6192,7 @@ local nigga = (function() -- src/Lua/loader.lua
                                 end
                             
                                 function macro:third_person()
-                                    if not da_hood.functions:is_localplayer_alive() then return end
+                                    if not cfgs.functions:is_localplayer_alive() then return end
                                     if not macro.enabled then return end
                                     if not macro.keybind then return end
                             
@@ -6208,7 +6208,7 @@ local nigga = (function() -- src/Lua/loader.lua
                                 end
                             
                                 function macro:macro_abuse(input)
-                                    if not da_hood.functions:is_localplayer_alive() then return end
+                                    if not cfgs.functions:is_localplayer_alive() then return end
                                     if not macro.macroabuse then return end
                                     if not macro.enabled then return end
                             
@@ -6277,7 +6277,7 @@ local nigga = (function() -- src/Lua/loader.lua
                                 }
                             
                                 function animation_options:play(animation)
-                                    if not da_hood.functions:is_localplayer_alive() then return end
+                                    if not cfgs.functions:is_localplayer_alive() then return end
                                     if not animation_options.enabled then return end
                                     if not animation then return end
                             
@@ -6287,7 +6287,7 @@ local nigga = (function() -- src/Lua/loader.lua
                                             [2] = animation
                                         }
                                         
-                                        da_hood.functions:get_main_event():FireServer(table.unpack(args))
+                                        cfgs.functions:get_main_event():FireServer(table.unpack(args))
                                     end)
                                 end
                             
@@ -6319,7 +6319,7 @@ local nigga = (function() -- src/Lua/loader.lua
                                     
                                         local NoSitFunctions = {
                                             NoSit = function ()
-                                                if da_hood.functions:is_localplayer_alive() then
+                                                if cfgs.functions:is_localplayer_alive() then
                                                     if LocalPlayer.Character.Humanoid.Sit then
                                                         LocalPlayer.Character.Humanoid.Sit = false
                                                     end
@@ -6443,7 +6443,7 @@ local nigga = (function() -- src/Lua/loader.lua
                                 end
                             
                                 function aimviewer:enable()
-                                    if not da_hood.functions:is_localplayer_alive() then disable() return end
+                                    if not cfgs.functions:is_localplayer_alive() then disable() return end
                                     if not aimviewer.enabled then disable() return end
                                     if not aimviewer.keybind_enabled then disable() return end
                                     if not aimviewer.target then disable() return end; if aimviewer.target == nil then disable() return end
@@ -6452,7 +6452,7 @@ local nigga = (function() -- src/Lua/loader.lua
                                     local bodyeffects = character:FindFirstChild("BodyEffects")
                                     if not bodyeffects then disable() return end
                             
-                                    local gun = da_hood.functions:get_gun_from_character(character)
+                                    local gun = cfgs.functions:get_gun_from_character(character)
                                     if not gun then disable() return end
                             
                                     local AIMPOSITION = bodyeffects.MousePos.Value
@@ -6481,7 +6481,7 @@ local nigga = (function() -- src/Lua/loader.lua
                                 AVtoggle:Keybind({ title = "keybind", keybindlist = true, keybindname = "aim viewer", mode = "Toggle", callback = function (key)
                                     aimviewer.keybind_enabled = key
                                     if key and aimviewer.enabled and aimviewer.keybind_enabled then
-                                        aimviewer.target = da_hood.functions:getnearestplayertomouse(100, {  
+                                        aimviewer.target = cfgs.functions:getnearestplayertomouse(100, {  
                                             visibility = true,
                                             wallcheck = false,
                                             team = false,
@@ -6498,7 +6498,7 @@ local nigga = (function() -- src/Lua/loader.lua
                                 end })
                             end
                         end
-                        do -- src/Lua/Scripts/da_hood/components/e_playerlist.lua
+                        do -- src/Lua/Scripts/cfgs/components/e_playerlist.lua
                             local players_tab = Interface:Tab( "player-list" )
                             
                             local players_list = players_tab:Section("main", "left")
@@ -6537,7 +6537,7 @@ local nigga = (function() -- src/Lua/loader.lua
                                                 return
                                             end
                                     
-                                            if da_hood.functions:is_alive(player) then
+                                            if cfgs.functions:is_alive(player) then
                                                 local character = player.Character
                                                 if not character then
                                                     mark.Visible = false
@@ -6572,7 +6572,7 @@ local nigga = (function() -- src/Lua/loader.lua
                                 local current_player = playerlist:GetCurrentPlayer()
                                 if current_player then
                                     local player = playerService[current_player]
-                                    if da_hood.functions:is_alive(player) then
+                                    if cfgs.functions:is_alive(player) then
                                         local character = player.Character
                                         if not character then return end
                                         
@@ -6583,7 +6583,7 @@ local nigga = (function() -- src/Lua/loader.lua
                             
                                         tp_pos = humanoidrootpart.CFrame
                             
-                                        if da_hood.functions:is_localplayer_alive() then
+                                        if cfgs.functions:is_localplayer_alive() then
                                             local local_hum = LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
                                             if not local_hum then return end
                             
@@ -6620,17 +6620,17 @@ local nigga = (function() -- src/Lua/loader.lua
                             end)
                             coroutine.resume(loop_update_thing)
                         end
-                        do -- src/Lua/Scripts/da_hood/components/f_settings.lua
+                        do -- src/Lua/Scripts/cfgs/components/f_settings.lua
                             local config = {
-                                path = "drax/configs/da_hood/",
+                                path = "drax/configs/cfgs/",
                                 file = "",
                                 config_name = ""
                             }
                             function config:get_list()
                                 local config_list = {}
                             
-                                if #listfiles("drax/configs/da_hood") > 0 then
-                                    for i, v in next, listfiles("drax/configs/da_hood") do
+                                if #listfiles("drax/configs/cfgs") > 0 then
+                                    for i, v in next, listfiles("drax/configs/cfgs") do
                                         local ext = '.'..v:split('.')[#v:split('.')];
                                         if ext == '.txt' then
                                             table.insert(config_list, v:split('\\')[#v:split('\\')]:sub(1,-#ext-1))
