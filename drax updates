@@ -257,7 +257,7 @@ local UserInterface = (function() -- src/Lua/Interface/Interface.Lua
     function UserInterface:Create(OptionsLaughtOutLouds)
         local Configuration = {
             Tabs = {},
-            Title = OptionsLaughtOutLouds.title or 'syndicate<font color="rgb(129, 127, 127)">.club</font>'
+            Title = OptionsLaughtOutLouds.title or 'drax<font color="rgb(129, 127, 127)">.cracl</font>'
         }
     
         local Texts = {
@@ -273,7 +273,7 @@ local UserInterface = (function() -- src/Lua/Interface/Interface.Lua
         end
         
         UI["1"] = InstanceNew("ScreenGui", coreguiService)
-        UI["1"]["Name"] = [[syndicate.club]]
+        UI["1"]["Name"] = [[drax.cracl]]
         UI["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Global
     
         UI["2"] = InstanceNew("Frame", UI["1"])
@@ -344,7 +344,7 @@ local UserInterface = (function() -- src/Lua/Interface/Interface.Lua
         UI["a"]["BackgroundTransparency"] = 1
         UI["a"]["Size"] = UDim2New(0, 452, 0, 19)
         UI["a"]["BorderColor3"] = Color3FromRGB(0, 0, 0)
-        UI["a"]["Text"] = [[powered by astro.space]]
+        UI["a"]["Text"] = [[powered by x.deposit niggaaa]]
         UI["a"]["Name"] = [[CreditTitle]]
         UI["a"]["Position"] = UDim2New(0, 96, 0, 428)
     
@@ -3249,7 +3249,7 @@ local UserInterface = (function() -- src/Lua/Interface/Interface.Lua
                     local WatermarkCorner = InstanceNew("UICorner")
                     local WatermarkTitle = InstanceNew("TextLabel")
                 
-                    local TextBoundX = UIModule:GetTextBoundary("syndicate.club", Enum.Font.Code, 13)
+                    local TextBoundX = UIModule:GetTextBoundary("drax.cracl", Enum.Font.Code, 13)
                     Watermark.Name = "Watermark"
                     Watermark.Parent = UI["1"]
                     Watermark.BackgroundColor3 = Color3FromRGB(23, 21, 21)
@@ -5348,7 +5348,7 @@ local nigga = (function() -- src/Lua/loader.lua
                                     indicatorClass.indicate = value
                                 end })
                                 
-                                local title = indicatorClass:new_indicator("drax.universal")
+                                local title = indicatorClass:new_indicator("drax.crack")
                                 local aim_Ass_character = indicatorClass:new_indicator("no target")
                                 local silent_Ass_character = indicatorClass:new_indicator("no target")
                                 title.changecolor(Color3.fromRGB(250, 3, 0))
@@ -6728,11 +6728,11 @@ local nigga = (function() -- src/Lua/loader.lua
                 end
                 
             end)()
-        elseif chosen_game == "universal" then
-            (function() -- src/Lua/Scripts/universal/universal.lua
+        elseif chosen_game == "" then
+            (function() -- src/Lua/Scripts//.lua
                 -- with bananas, we live.
                 
-                local universal = {
+                local  = {
                     functions = {}
                 }
                 
@@ -6789,8 +6789,8 @@ local nigga = (function() -- src/Lua/loader.lua
                 }
                 
                 do
-                    (function() -- src/Lua/Scripts/universal/things.lua
-                        function universal.functions:is_alive(player)
+                    (function() -- src/Lua/Scripts//things.lua
+                        function .functions:is_alive(player)
                         	return player
                         			and player.Character
                         			and player.Character:FindFirstChildOfClass("Humanoid")
@@ -6799,11 +6799,11 @@ local nigga = (function() -- src/Lua/loader.lua
                         		or false
                         end
                         
-                        function universal.functions:is_localplayer_alive()
+                        function .functions:is_localplayer_alive()
                         	return self:is_alive(LocalPlayer)
                         end
                         
-                        function universal.functions:wall_check(Character)
+                        function .functions:wall_check(Character)
                             local Ray = Ray.new(camera.CFrame.Position, (Character.PrimaryPart.Position - camera.CFrame.Position))
                             local IgnoreList = {camera, LocalPlayer.Character, Character, Character.Parent}
                             local PartHit = workspace:FindPartOnRayWithIgnoreList(Ray, IgnoreList)
@@ -6814,14 +6814,14 @@ local nigga = (function() -- src/Lua/loader.lua
                         end
                         
                         -- hahahaha, actually did this due to me being lazy to do something like player.Character in getnearestplayertomouse so I did this little shit 😀😀
-                        function universal.functions:getentities()
+                        function .functions:getentities()
                         	local entities = {}
                         	for _, player in ipairs(playerService:GetPlayers()) do
                         		if player == LocalPlayer then
                         			continue
                         		end
                                 
-                        		if not universal.functions:is_alive(player) then
+                        		if not .functions:is_alive(player) then
                         			continue
                         		end
                                 
@@ -6835,7 +6835,7 @@ local nigga = (function() -- src/Lua/loader.lua
                         	return entities
                         end
                         
-                        function universal.functions:getnearestplayertomouse(distance, settings)
+                        function .functions:getnearestplayertomouse(distance, settings)
                         	local entity = nil
                         	local distance = distance
                         	for i, v in next, self:getentities() do
@@ -6881,7 +6881,7 @@ local nigga = (function() -- src/Lua/loader.lua
                         	return entity
                         end
                         
-                        function universal.functions:getclosestpart(character, config)
+                        function .functions:getclosestpart(character, config)
                         	local Distance = MathHuge
                         	local MousePosition = inputService:GetMouseLocation()
                         	local ClosestPart
@@ -6909,7 +6909,7 @@ local nigga = (function() -- src/Lua/loader.lua
                         	return ClosestPart
                         end
                         
-                        function universal.functions:closestpoint(part)
+                        function .functions:closestpoint(part)
                         	local RaycastParamsClosestPoint = RaycastParamsNew()
                         	RaycastParamsClosestPoint.FilterType = Enum.RaycastFilterType.Whitelist
                         	RaycastParamsClosestPoint.FilterDescendantsInstances = { part }
@@ -6935,7 +6935,7 @@ local nigga = (function() -- src/Lua/loader.lua
                         	})
                         
                         -- this is so fucking retarded.
-                        function universal.functions:mouse_aim(arguments)
+                        function .functions:mouse_aim(arguments)
                         	if not type(arguments) == "table" then
                         		return
                         	end
@@ -6978,7 +6978,7 @@ local nigga = (function() -- src/Lua/loader.lua
                         	mousemoverel(AimPosX / 10, AimPosY/10)
                         end
                         
-                        function universal.functions:camera_aim(arguments)
+                        function .functions:camera_aim(arguments)
                         	-- oh my loving dear programming life.
                         	-- too much things in arguments 😐
                         
@@ -7059,10 +7059,10 @@ local nigga = (function() -- src/Lua/loader.lua
                     end)()
                 end
                 
-                local Interface = UserInterface:Create{title = 'drax<font color="rgb(250, 3, 0)">.universal</font>',}
+                local Interface = UserInterface:Create{title = 'drax<font color="rgb(250, 3, 0)">.</font>',}
                 
-                do -- src/Lua/Scripts/universal/components/
-                    do -- src/Lua/Scripts/universal/components/a_aimassist.lua
+                do -- src/Lua/Scripts//components/
+                    do -- src/Lua/Scripts//components/a_aimassist.lua
                         -- THIS SHIT IS ACTUALLY P!112!!!! 😱😱😱
                         -- 😎😎😎😎😎
                         
@@ -7075,14 +7075,14 @@ local nigga = (function() -- src/Lua/loader.lua
                             if type(bone) == "table" and #bone > 0 then
                                 if closest_mode ~= "none" then
                                     if closest_mode == "closest part" then
-                                        local newBone = tostring(universal.functions:getclosestpart(aimassist.character, bone))
+                                        local newBone = tostring(.functions:getclosestpart(aimassist.character, bone))
                                         if type(newBone) == "string" and newBone ~= "" and aimassist.character:FindFirstChild(newBone) then -- very superior check 😎 could do a better one but meh
                                             position = aimassist.character[newBone].Position
                                         end
                                     elseif closest_mode == "closest point" then
-                                        local newBone = tostring(universal.functions:getclosestpart(aimassist.character, bone))
+                                        local newBone = tostring(.functions:getclosestpart(aimassist.character, bone))
                                         if type(newBone) == "string" and newBone ~= "" and aimassist.character:FindFirstChild(newBone) then
-                                            position = universal.functions:closestpoint(aimassist.character[newBone])
+                                            position = .functions:closestpoint(aimassist.character[newBone])
                                         end
                                     end
                                 end
@@ -7105,7 +7105,7 @@ local nigga = (function() -- src/Lua/loader.lua
                             if not aimassist.character then
                                 return end
                             
-                            universal.functions:camera_aim({
+                            .functions:camera_aim({
                                 smoothness = aimassist.smoothness,
                                 use_mouse_sensitivity = aimassist.use_mouse_sensitivity,
                                 jitter = aimassist.jitter,
@@ -7125,13 +7125,13 @@ local nigga = (function() -- src/Lua/loader.lua
                                 TaskWait()
                         
                                 if aimassist.lock_target then
-                                    local char = universal.functions:getnearestplayertomouse(aimassist.fieldofview, aimassist.configuration)
+                                    local char = .functions:getnearestplayertomouse(aimassist.fieldofview, aimassist.configuration)
                                     if char ~= nil and aimassist.lock_target_state == false then
                                         aimassist.lock_target_state = true
                                         aimassist.character = char
                                     end
                                 else
-                                    aimassist.character = universal.functions:getnearestplayertomouse(aimassist.fieldofview, aimassist.configuration)
+                                    aimassist.character = .functions:getnearestplayertomouse(aimassist.fieldofview, aimassist.configuration)
                                 end
                             end
                             aimassist.character = nil
@@ -7250,7 +7250,7 @@ local nigga = (function() -- src/Lua/loader.lua
                             aimassist.jitter.z = value
                         end })
                     end
-                    do -- src/Lua/Scripts/universal/components/b_render.lua
+                    do -- src/Lua/Scripts//components/b_render.lua
                         local renderTab = Interface:Tab( "render" )
                         
                         local aim_assist_render = renderTab:Section("aim assist", "left")
@@ -7431,7 +7431,7 @@ local nigga = (function() -- src/Lua/loader.lua
                         end })
                         
                         local aim_Ass_character = fucking_shitty_indicator:new_indicator("no target")
-                        local title = fucking_shitty_indicator:new_indicator("drax.universal")
+                        local title = fucking_shitty_indicator:new_indicator("drax.")
                         aim_Ass_character.changecolor(Color3.fromRGB(255,255,255))
                         
                         local randomshit = coroutine.create(function ()
@@ -7443,7 +7443,7 @@ local nigga = (function() -- src/Lua/loader.lua
                         end)
                         coroutine.resume(randomshit)
                     end
-                    do -- src/Lua/Scripts/universal/components/c_players.lua
+                    do -- src/Lua/Scripts//components/c_players.lua
                         local esp = {}
                         esp.enabled = false
                         
@@ -7604,7 +7604,7 @@ local nigga = (function() -- src/Lua/loader.lua
                                     continue
                                 end
                         
-                                if not universal.functions:is_alive(player.entity) then
+                                if not .functions:is_alive(player.entity) then
                                     disable()
                                     continue
                                 end
@@ -7832,7 +7832,7 @@ local nigga = (function() -- src/Lua/loader.lua
                         
                         
                     end
-                    do -- src/Lua/Scripts/universal/components/d_playerlist.lua
+                    do -- src/Lua/Scripts//components/d_playerlist.lua
                         local players_tab = Interface:Tab( "playerslist" )
                         
                         local players_list = players_tab:Section("main", "left")
@@ -7942,7 +7942,7 @@ end })
 
 
 -- why no init function ??
-UserInterface:Watermark('syndicate<font color="rgb(129, 127, 127)">.club</font>')
+UserInterface:Watermark('drax<font color="rgb(129, 127, 127)">.crack</font>')
 UserInterface:KeybindsList()
 playerlist:PlayerList()
 hitbox:BoneSelector({ callback = function (value)
