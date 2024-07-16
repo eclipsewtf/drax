@@ -3603,9 +3603,9 @@ local nigga = (function() -- src/Lua/loader.lua
     loaderOptions:new()
     
     local info_text_table = {
-        "Welcome User",
-        "Loaded Da Hood Version",
-        "Version 1.0"
+        "Welcome nigger",
+        "Loaded Drax.crack Loader",
+        "Version cracked"
     }
     local info_text = table.concat(info_text_table, "\n")
     
